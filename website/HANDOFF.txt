@@ -1,0 +1,39 @@
+Netring GPO Compliance - hand-off to the netringtech.com project
+Product version 0.10.10, updated 2026-11-19
+
+What this is
+Everything the website project needs to publish the Netring GPO Compliance page and its downloads. The same files are published in a public GitHub repository, https://github.com/rrvalcourt69-source/netring-gpo-compliance-releases (branch main), in these same folders. The website pulls them from there. That repository is separate from the private product source. It holds only the latest version: one commit that is replaced on every update, so it has no history, and every file has a fixed name with no version in it.
+Raw file URL: https://raw.githubusercontent.com/rrvalcourt69-source/netring-gpo-compliance-releases/main/<path from the manifest>
+The version number and the SHA-256 of every file are in website/manifest.json. Read that file first.
+
+Files (paths are from the root of the public repository; read website/REPO-HANDOFF.txt for how to pull them)
+downloads/Netring-GPO-Compliance-User-Guide.docx   The user guide, a Word file, offered as a download.
+downloads/Netring-GPO-Compliance.zip                 The program: signed GPOCompliance.exe, the collector script, a README and the hashes, as one zip (about 60 MB). The publish step adds it from the signed release; website/manifest.json lists its version, size and SHA-256 and the SHA-256 of the program inside it. See REPO-HANDOFF.txt for how to host it.
+website/manifest.json                              Version, date, contact, and for every file below its title, caption, size and SHA-256.
+website/screenshots/   9 PNG files, 1544 x 881: review-tree, ou-detail, dark-mode, plan-editor, migration-map, gpo-stack, proposed-state, baseline-gaps, self-assessment.
+website/samples/       8 sample report PDFs (executive summary, baseline compliance, control compliance, SPRS and POA&M, remediation plan, GPO inventory, OU and tier review, migration plan). Fictional sample data. Can be offered as downloads or previews.
+website/logos/         netring-icon-192.png, netring-logo-dark-640.png, netring-logo-round.png, netring-gpo-compliance.ico
+website/HANDOFF.txt    This file.
+The website copies these files and never edits them. A problem found in a file is fixed in the product repository and pulled again.
+
+Product facts for the page
+- Name: Netring GPO Compliance. Say "formerly GPO Analyzer" once for people who know the old name.
+- Company: NetRing Tech Services, LLC. Contact: info@netring.net
+- What it does: shows how Group Policy is built across Active Directory domains, scores it against Microsoft security baselines and DISA STIGs, maps it to NIST SP 800-171 and CMMC (control compliance, SPRS score range, POA&M), and tells you what to change.
+- It never changes Active Directory. It reads an export made by a collector script. It can write apply and undo PowerShell scripts; they only preview unless run with -Apply, and they link new GPOs disabled.
+- Runs on Windows 10, Windows 11 or Windows Server. One program, GPOCompliance.exe, nothing to install. Signed by NetRing Tech Services, LLC.
+- Eight PDF reports: executive summary, baseline compliance, control compliance (NIST 800-171), SPRS score and POA&M, remediation plan, GPO inventory and findings, OU and tier review, migration plan.
+- Claims to avoid: it does not certify CMMC compliance. Group Policy shows evidence for 18 of the 110 NIST SP 800-171 practices; a person must assess and sign off the rest. Say "an aid for your assessment", never "compliance guaranteed".
+
+Rules for the images and samples
+- All data is fictional (Northwind). Do not replace it with a real customer, domain or computer name.
+- Keep the screenshots unedited. The folder path in the toolbar was replaced with a generic one on purpose.
+- Use the title and caption in manifest.json as alt text and captions.
+
+Program download
+- The signed program is in downloads/Netring-GPO-Compliance.zip. Offer it as the main download next to the user guide. Show the version and the SHA-256 from the manifest so visitors can verify it.
+
+How an update works (done in the product project, not by the website)
+1. Rebuild the guide, screenshots and samples and overwrite the same file names.
+2. Update version, date and SHA-256 values in website/manifest.json.
+3. Run tools\Publish-WebAssets.ps1 in the product project. It checks every file against the manifest and replaces main in the public repository with a single new commit. The website pulls the new files and can compare the SHA-256 values to see what changed.

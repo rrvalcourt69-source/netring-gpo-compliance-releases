@@ -1,0 +1,174 @@
+{
+    "product":  "Netring GPO Compliance",
+    "formerly":  "GPO Analyzer",
+    "company":  "NetRing Tech Services, LLC",
+    "contact":  "info@netring.net",
+    "version":  "0.10.10",
+    "updated":  "2026-11-19",
+    "notes":  "Git holds only the latest version. File names are fixed; files are overwritten on each update.",
+    "downloads":  [
+                      {
+                          "path":  "downloads/Netring-GPO-Compliance-User-Guide.docx",
+                          "title":  "Netring GPO Compliance User Guide",
+                          "type":  "Word document",
+                          "sha256":  "2bdb9dfedb59bfce9fdecadffe0557039d6e8bee194fad2ae620da83b2921b44"
+                      },
+                      {
+                          "path":  "downloads/Netring-GPO-Compliance.zip",
+                          "title":  "Netring GPO Compliance program with the collector script",
+                          "type":  "Zip archive (signed program, collector script, README, hashes)",
+                          "version":  "0.10.10",
+                          "size_bytes":  60142079,
+                          "sha256":  "39bfa0ea1df6c111c286053ee0d365ce9399877222dd1a164351ffff78f3c212",
+                          "program_sha256":  "709c975e9fe70b67ebf5b98f3d5ac55ec9ef329ff116af070eeba142a417ed0d",
+                          "signed_by":  "Netring Tech Services, LLC"
+                      }
+                  ],
+    "screenshots":  [
+                        {
+                            "path":  "website/screenshots/baseline-gaps.png",
+                            "title":  "Baseline gaps",
+                            "caption":  "Met, missing and different settings for an OU against the chosen baseline.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "1fa9d9b6eae73ccce10f57059fd89f50bb7451a47c1c983805ce299187791847"
+                        },
+                        {
+                            "path":  "website/screenshots/dark-mode.png",
+                            "title":  "GPO Review in dark mode",
+                            "caption":  "The whole program and its reports switch between light and dark.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "1a7347c3a8733c5405724beade439e07c33bed9df12f403408b220196b32c493"
+                        },
+                        {
+                            "path":  "website/screenshots/gpo-stack.png",
+                            "title":  "GPO stack and carry-over list",
+                            "caption":  "The GPOs that would apply at each landing OU and the settings that would be lost.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "a6dfd3eaad3f76838a3523535bc47cea474887b9bf13c255c5eb3ae3ff70c4af"
+                        },
+                        {
+                            "path":  "website/screenshots/migration-map.png",
+                            "title":  "Migration map",
+                            "caption":  "Waves, origin and landing OUs, users and devices moving, baseline scores before and after.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "74de438ff63f297e370b604c3828b9972056a39fe8708b2eafc689fda417fb16"
+                        },
+                        {
+                            "path":  "website/screenshots/ou-detail.png",
+                            "title":  "Detail panel for a selected OU",
+                            "caption":  "Confirm or correct the tier; see the GPOs that reach the OU and its baseline score.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "29e1e4cb537de25943697092411023c53a491dba50375ea9789fe8bfa31931cd"
+                        },
+                        {
+                            "path":  "website/screenshots/plan-editor.png",
+                            "title":  "Migration plan editor",
+                            "caption":  "Choose a landing OU and wave for each origin OU.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "a229abd135d892f318a94c245b751f565d895a62afebfbf2e1a9be75aca7bfe2"
+                        },
+                        {
+                            "path":  "website/screenshots/proposed-state.png",
+                            "title":  "Proposed state",
+                            "caption":  "What-if link changes with NEW and ENABLE tags. Active Directory is never changed.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "dc5f5c8b55a45a8ebefc162a427a7f7d7a48921944be0afaa0a03df277410c35"
+                        },
+                        {
+                            "path":  "website/screenshots/review-tree.png",
+                            "title":  "GPO Review: the OU tree with tiers and GPO links",
+                            "caption":  "Each OU with its tier, GPO links, order and flags.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "60d476b2042c0c6c4a81fa0cd2c87488b2f764adeeb8726364881e86c22a28a1"
+                        },
+                        {
+                            "path":  "website/screenshots/self-assessment.png",
+                            "title":  "NIST SP 800-171 self-assessment",
+                            "caption":  "The 110 practices with Group Policy evidence, status, owner and notes, and the SPRS score range.",
+                            "width":  1544,
+                            "height":  881,
+                            "sha256":  "e0c14f86a2a5f616f57724dc2ba6b88b4971fd700b4bbb0d5d97a6b9b10c0c58"
+                        }
+                    ],
+    "sample_reports":  [
+                           {
+                               "path":  "website/samples/sample-baseline-compliance.pdf",
+                               "title":  "Sample report: Baseline compliance",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "fd1a6bffadaf4e140290676439b2db5f878aa473b78e99afb57315b00577ae0b"
+                           },
+                           {
+                               "path":  "website/samples/sample-control-compliance.pdf",
+                               "title":  "Sample report: Control compliance (NIST SP 800-171)",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "803f2ca478b77a2b6932a998de68a9ce0029de4188560bbd2aa58a3de8adccf0"
+                           },
+                           {
+                               "path":  "website/samples/sample-executive-summary.pdf",
+                               "title":  "Sample report: Executive summary",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "1ab5e681345d3f09d1aafec2c68fca55fc4fa09964fbeaf2322698ad41b4cd9d"
+                           },
+                           {
+                               "path":  "website/samples/sample-gpo-inventory.pdf",
+                               "title":  "Sample report: GPO inventory and findings",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "209d5e0286f683517a95a4f2172047c227db982eaabca9b6f5fe82f4a40a3665"
+                           },
+                           {
+                               "path":  "website/samples/sample-migration-plan.pdf",
+                               "title":  "Sample report: Migration plan",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "3af2e4c223c0481a83182be086c231622b90d545305e98e39d2f43ea1e2b5665"
+                           },
+                           {
+                               "path":  "website/samples/sample-ou-tier-review.pdf",
+                               "title":  "Sample report: OU and tier review",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "8557f02286f88a294caa807d6302ffb74e3120a496dbd3ff312fa4413b9c9bca"
+                           },
+                           {
+                               "path":  "website/samples/sample-remediation-plan.pdf",
+                               "title":  "Sample report: Remediation plan",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "ac76cd31171ec373229ef4c3384ca76dc20eb75016193df6012086f47576b1b7"
+                           },
+                           {
+                               "path":  "website/samples/sample-sprs-poam.pdf",
+                               "title":  "Sample report: SPRS score and POA\u0026M",
+                               "note":  "Fictional Northwind sample data",
+                               "sha256":  "68a4914ebf41a592d61c032f06442e17e6f6995bf928530efa13702154be5bc1"
+                           }
+                       ],
+    "logos":  [
+                  {
+                      "path":  "website/logos/netring-gpo-compliance.ico",
+                      "description":  "Program icon (Windows .ico)",
+                      "sha256":  "b3c49bc69945eb65e368707d4d1a284e148ddc2fe5268e4d46308f44de2b5208"
+                  },
+                  {
+                      "path":  "website/logos/netring-icon-192.png",
+                      "description":  "NetRing circle N, 192 px, for favicons and cards",
+                      "sha256":  "c1ab9533e751635b4699be3793e52e537d1354eb11fc3b42ea6860568bcadf72"
+                  },
+                  {
+                      "path":  "website/logos/netring-logo-dark-640.png",
+                      "description":  "NetRing logo for dark backgrounds, 640 px",
+                      "sha256":  "dce2069c105663629a6a3280d908193080ba0314e7bc25e22da408d8c3b592fc"
+                  },
+                  {
+                      "path":  "website/logos/netring-logo-round.png",
+                      "description":  "NetRing logo on a white circle with navy N, as used on report covers",
+                      "sha256":  "5edede580f2d4eb4b94fbef60287ec7a1d863c4b774f4e190c0b3bb3a9f4deb0"
+                  }
+              ],
+    "program_version":  "0.10.10"
+}

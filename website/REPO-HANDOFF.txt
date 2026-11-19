@@ -1,0 +1,57 @@
+Netring GPO Compliance - repository hand-off for the netringtech.com project
+Written 2026-11-19. Read this first, then website/manifest.json, then website/HANDOFF.txt (product facts and page rules).
+
+1. What the repository is
+URL:    https://github.com/rrvalcourt69-source/netring-gpo-compliance-releases
+Branch: main
+Access: public. Anyone can read and download. Only the owner (NetRing Tech Services, LLC) can change it. The website needs no login and no token.
+Purpose: it holds only the published files for the Netring GPO Compliance product: the signed program (as a zip), the user guide (Word), screenshots, sample reports and logos. It does not hold the product source code. The source is in a private repository that the website project does not need.
+
+2. The one rule that matters: main is replaced, not added to
+The owner publishes with a script that replaces main with a single new commit on every update (a force push). The repository therefore holds only the latest version and has no history.
+- Always take a fresh copy: git clone --depth 1 <URL>. Or, in an existing clone: git fetch origin main, then git reset --hard origin/main.
+- Never use git pull or git merge. They fail or make a mess because the history is rewritten every time.
+- Do not rely on commit hashes. Use the version, the date and the SHA-256 values in website/manifest.json to see what changed.
+
+3. Layout (paths are from the repository root)
+README.txt                                            one-paragraph description
+downloads/Netring-GPO-Compliance-User-Guide.docx      the user guide, a Word file, offered as a download
+downloads/Netring-GPO-Compliance.zip                  the program: signed GPOCompliance.exe, collector script, README and hashes (about 60 MB)
+website/manifest.json                                 version, date, contact; for each file its path, title or caption, size and SHA-256
+website/screenshots/                                  9 PNG files, 1544 x 881
+website/samples/                                      8 sample report PDFs (fictional sample data)
+website/logos/                                        4 logo and icon files
+website/HANDOFF.txt                                   product facts, claims to avoid, rules for images
+website/REPO-HANDOFF.txt                              this file
+File names are fixed. They never contain a version number. A new version replaces the file under the same name.
+
+4. How the website should use it
+a. At build time, clone the repository fresh (section 2).
+b. Read website/manifest.json. It lists every file the site should use. Ignore anything not listed.
+c. Check every listed file against its sha256 in the manifest. If the clone fails, a file is missing or any value does not match, stop. Keep the files that are already deployed and report the problem. Never deploy a half-updated set.
+d. Copy the files into the website's own folder and link to those copies on netringtech.com, for example /downloads/Netring-GPO-Compliance-User-Guide.docx. Do not link visitors to github.com or raw.githubusercontent.com.
+   The program zip, downloads/Netring-GPO-Compliance.zip, is about 60 MB, much larger than the other files. Host it on the site like the rest. If the way the site is deployed cannot take a file that size, link to it on GitHub instead: https://github.com/rrvalcourt69-source/netring-gpo-compliance-releases/raw/main/downloads/Netring-GPO-Compliance.zip
+   Its manifest entry has the version, size_bytes, sha256 (the zip) and program_sha256 (GPOCompliance.exe inside it). Show the version and program_sha256 on the page. The program is signed by NetRing Tech Services, LLC.
+e. Use the title and caption from the manifest as the alt text and caption of each screenshot. Show the version and date from the manifest on the page, so visitors can see the guide is current.
+f. Do not edit, crop, recompress or rename the files. Report a problem to the owner instead; it is fixed at the source and published again.
+
+Raw file URL, if one is needed for a quick check: https://raw.githubusercontent.com/rrvalcourt69-source/netring-gpo-compliance-releases/main/<path from the manifest>
+
+5. When the site updates
+netringtech.com is hosted at SiteGround, not on a build service, and nothing here updates it by itself. Publishing to this repository only changes the repository. The website project pulls the repository (section 4) and puts the files on the site the way the owner already deploys that site (for example an upload over SFTP or SiteGround's Site Tools Git). Check this with the owner; no automatic trigger exists.
+
+6. What the owner does to update (for your information)
+1. Rebuild the guide, screenshots and samples and overwrite the same file names.
+2. Update version, date and SHA-256 values in website/manifest.json.
+3. Run the publish script. It checks every file against the manifest, checks that no AI provenance data is embedded in the documents and images, checks that the program is validly signed, adds the program zip and its hashes to the manifest and replaces main with one new commit.
+
+7. Rules for the files
+- All screenshots and samples use fictional data (Northwind). Never replace them with real customer data.
+- Do not add AI or tool-attribution text to the page copy or the files. The owner wants none in the repository.
+- Licence: not decided. Treat everything as copyright NetRing Tech Services, LLC, to be shown and offered for download on netringtech.com only. Do not redistribute it elsewhere.
+- Claims: the product does not certify CMMC compliance. See website/HANDOFF.txt for the wording to use and avoid.
+
+8. If something is wrong
+- Clone fails or says the repository is not found: the owner has not published yet, or the URL changed. Ask the owner.
+- Hash mismatch: stop (section 4c) and tell the owner. Do not fix the manifest yourself.
+- Anything else, or a change you want to the layout: info@netring.net
